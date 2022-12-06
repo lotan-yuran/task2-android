@@ -19,6 +19,8 @@ public class AddStudentActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_student);
+
+        // Pointer to the inputs and buttons
         EditText nameEt = findViewById(R.id.addstudent_name_et);
         EditText idEt = findViewById(R.id.addstudent_id_et);
         EditText phoneEt = findViewById(R.id.addstudent_phone_et);
@@ -27,6 +29,7 @@ public class AddStudentActivity extends AppCompatActivity {
         Button saveBtn = findViewById(R.id.addstudent_save_btn);
         Button cancelBtn = findViewById(R.id.addstudent_cancell_btn);
 
+        // Click add
         saveBtn.setOnClickListener(view -> {
             String name = nameEt.getText().toString();
             String id = idEt.getText().toString();
@@ -38,6 +41,7 @@ public class AddStudentActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
+        // Click cancel
         cancelBtn.setOnClickListener(view -> finish());
     }
 }
