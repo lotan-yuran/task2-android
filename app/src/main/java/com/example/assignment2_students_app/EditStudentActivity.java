@@ -55,9 +55,6 @@ public class EditStudentActivity extends AppCompatActivity {
         Button cancelBtn = findViewById(R.id.editstudent_cancel_btn);
         cancelBtn.setOnClickListener(view -> {
             finish();
-//            Intent intentEdit = new Intent(this,EditStudentActivity.class);
-//            intentEdit.putExtra("position", Integer.toString(position));
-//            startActivity(intentEdit);
         });
 
         // Delete click
