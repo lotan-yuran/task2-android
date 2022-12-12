@@ -11,9 +11,11 @@ public class Model {
     }
 
     private Model() {
-        for (int i = 0; i < 20; i++) {
-            addStudent(new Student("name" + i, "id" + i, "", "05" + i, "aaa", false));
-        }
+        addStudent(new Student("Lotan", "322592973", "", "0543399036", "mazor", false));
+        addStudent(new Student("Avi", "545429735", "", "0525399036", "Ramat Gan", true));
+        addStudent(new Student("Eli", "654853956", "", "0546543236", "Haifa", false));
+        addStudent(new Student("Tom", "657439864", "", "0543399123", "Tel aviv", true));
+        addStudent(new Student("Alex", "987654321", "", "0543123456", "Shoham", false));
     }
 
     List<Student> data = new LinkedList<>();

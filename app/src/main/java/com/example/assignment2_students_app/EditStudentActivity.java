@@ -22,7 +22,6 @@ public class EditStudentActivity extends AppCompatActivity {
         // Get the position of the current student
         Intent intent = getIntent();
         int position = Integer.parseInt(intent.getStringExtra("position"));
-        Log.d("LOTAN", "posssss " + position);
 
         // Pointers to all inputs
         TextView nameEt = findViewById(R.id.editstudent_name_et);

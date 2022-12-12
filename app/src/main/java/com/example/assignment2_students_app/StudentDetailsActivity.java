@@ -19,25 +19,28 @@ public class StudentDetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_details);
-        Log.d("LOTAN", "In detaiks");
 
+        // Get the position of the current student
         Intent intent = getIntent();
         int position = Integer.parseInt(intent.getStringExtra("position"));
-        Log.d("LOTAN", "pos " + position);
 
+        // Click on edit btn
         Button btn = findViewById(R.id.studentdetails_edit_btn);
         btn.setOnClickListener(view -> {
             Intent intentEdit = new Intent(this,EditStudentActivity.class);
+            // Send the position of the student
             intentEdit.putExtra("position", Integer.toString(position));
             startActivity(intentEdit);
         });
 
+        // Pointers to all inputs
         TextView nameTv = findViewById(R.id.studentdetails_name_show_tv);
         TextView idTv = findViewById(R.id.studentdetails_id_show_tv);
         TextView phoneTv = findViewById(R.id.studentdetails_phone_show_tv);
         TextView addressTv = findViewById(R.id.studentdetails_address_show_tv);
         CheckBox checkedCb = findViewById(R.id.studentdetails_checkbox_cb);
 
+        // Insert the data to the page
         Student current = Model.instance().getAllStudents().get(position);
         nameTv.setText(current.getName());
         idTv.setText(current.getId());

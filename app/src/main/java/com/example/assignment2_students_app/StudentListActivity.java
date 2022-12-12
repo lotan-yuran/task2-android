@@ -24,8 +24,6 @@ public class StudentListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_list);
 
-        Log.d("LOTAN", "onclick");
-
         data = Model.instance().getAllStudents();
         ListView list = findViewById(R.id.studentlist_list);
         list.setAdapter(new StudentListAdapter());

@@ -26,6 +26,7 @@ public class StudentRecyclerList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_recycler_list);
 
+        // Click on add student btn
         Button btn = findViewById(R.id.studentrecycler_add_student_btn);
         btn.setOnClickListener(view -> {
             Intent intent = new Intent(this,AddStudentActivity.class);
@@ -44,10 +45,8 @@ public class StudentRecyclerList extends AppCompatActivity {
         adapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(int pos) {
-
-                Log.d("LOTAN", "Row was clicked " + pos);
                 Intent intent = new Intent(StudentRecyclerList.this, StudentDetailsActivity.class);
-
+                // Send the position of the clicked student
                 intent.putExtra("position", Integer.toString(pos));
                 startActivity(intent);
             }
@@ -60,6 +59,8 @@ public class StudentRecyclerList extends AppCompatActivity {
         CheckBox cb;
         public StudentViewHolder(@NonNull View itemView, OnItemClickListener listener) {
             super(itemView);
+
+            // Pointers to the fields
             nameTv = itemView.findViewById(R.id.studentlistrow_name_tv);
             idTv = itemView.findViewById(R.id.studentlistrow_id_tv);
             cb = itemView.findViewById(R.id.studentlistrow_cb);
@@ -106,8 +107,6 @@ public class StudentRecyclerList extends AppCompatActivity {
 
         @Override
         public void onBindViewHolder(@NonNull StudentViewHolder holder, int position) {
-
-
             Student st = data.get(position);
             holder.bind(st, position);
 
